@@ -1,0 +1,29 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Piebald",
+  "colors": {
+    "primary": "#FF8400",
+    "light": "#FF8400",
+    "dark": "#FF8400"
+  },
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo.svg",
+    "dark": "/logo.svg",
+    "href": "https://piebald.ai"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "General",
+            "pages": ["roadmap"]
+          }
+        ]
+      }
+    ]
+  }
+}
