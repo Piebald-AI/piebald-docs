@@ -16,6 +16,9 @@
   "background": {
     "decoration": "gradient"
   },
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude"]
+  },
   "navigation": {
     "tabs": [
       {
