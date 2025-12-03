@@ -13,6 +13,9 @@
     "dark": "/logo.svg",
     "href": "https://piebald.ai"
   },
+  "background": {
+    "decoration": "gradient"
+  },
   "navigation": {
     "tabs": [
       {
