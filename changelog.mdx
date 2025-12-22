@@ -3,6 +3,26 @@ title: Changelog
 description: Latest updates and improvements to Piebald
 ---
 
+<Update label="v0.1.3" description="December 22th, 2025">
+  ## Piebald v0.1.3 - MCP server/tool enablement controls, chat status in the sidebar
+
+In **v0.1.3** we added **controls to disable specific MCP servers/tools**, and made it much easier to **understand the state of chats from the sidebar:**
+
+Now you'll see whether any chats are working, have finished working, or are waiting for tool call approval:
+
+<img class="shadow-md rounded-xl" width={350} alt="A screenshot of the sidebar showing chats selected, working, finished, and waiting for a tool call approval." src="/imgs/v0-1-3/chat_status_sidebar.png"/>
+
+And you can enable and disable specific MCP servers and individual tools.  Here's an example, where we have only `propose_plan_to_user` and `run_terminal_command` enabled, and those are the only ones the model gets:
+
+<img class="shadow-md rounded-xl" width={600} alt="A screenshot of the chat config sidebar showing only two builtin tools selected." src="/imgs/v0-1-3/tool_enablement.png" />
+
+We also added the ability to specify **custom instructions** when manually compaction a chat, we added the model's **currently active TODO** above the input box, and we added **GPT-5.2-Codex** and **Gemini 3 Flash** to our ChatGPT and Google AI subscription  support.
+
+Lastly we fixed bugs in our Anthropic and OpenAI responses engines, a bug with reporting provider errors, and made the release notes dialog a bit bigger and scrollable.
+
+**Next up:** We're working on file **@-mentions, branching, automatic chat tagging,** and **response rewriting,** among other things, and we'll be shipping more features in the next release!
+</Update>
+
 <Update label="v0.1.2" description="December 17th, 2025">
   ## Piebald v0.1.2 - Token speed meter, repaired Windows support, bug fixes
 
