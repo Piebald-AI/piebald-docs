@@ -3,6 +3,56 @@ title: Changelog
 description: Latest updates and improvements to Piebald
 ---
 
+<Update label="v0.1.5" description="December 29th, 2025">
+## Piebald v0.1.5 - web search, HTTP traffic retention, log file
+
+This release we've introduced a `web_search` tool, date-/count-based HTTP traffic log retention, a log file for debugging Piebald errors, and several smaller features and improvements.
+
+## Web search
+
+We've implemented a tool for the model to use to search the web, `web_search`.  We'll also be releasing a `web_fetch` tool in the next version.
+
+<img class="shadow-md rounded-xl" width="400" alt="Screenshot of a web search for 'latest version of Node.js' being performed by Claude Haiku 4.5 in response to the user's query 'What is the latest version of Node.js?'" src="/imgs/v0-1-5/web_search.png" />
+
+## HTTP traffic retention (Pro)
+
+With Piebald Pro, you can record all of the HTTP traffic performed by Piebald when interfacing with AI provider APIs to inspect their contents, investigate context issues, and learn about how the provider APIs work.
+
+The logs are very verbose, however, and can pile up quickly if you use Piebald heavily, so we added a feature where you can configure a maximum number of logs to retain and a maximum age.  For example, you can set the count to 5 to only keep the last 5 logs, and the date to 1 to only keep recent logs.
+
+<img class="shadow-md rounded-xl" width="600" alt="Screenshot of the 'HTTP Traffic' section in the Piebald settings" src="/imgs/v0-1-5/http_traffic_settings.png" />
+
+## "Draft prompt partially written" (Pro)
+
+There's a new status displayed in the sidebar for sessions that have a draft prompt written up but not sent yet.  It displays as pink with the text "Draft prompt partially written:"
+
+<img class="shadow-md rounded-xl" width="400" alt="Screenshot of the sidebar with several chats, one of them having the status 'Draft prompt partially written' as described" src="/imgs/v0-1-5/draft_prompt_partially_written.png" />
+
+This feature is available on the Piebald Pro plan.
+
+## Log File
+
+We now write logs to a file named after the current date, e.g. `2025-12-29.log`, and they're located in Piebald's app data directory, which differs by platform:
+- **macOS:** `~/Library/Application Support/piebald/logs`
+- **Windows:** `%USERPROFILE%\AppData\Roaming\piebald\logs`
+- **Linux:** `~/.local/share/piebald/logs`
+
+## Other
+
+We've added several smaller features as well:
+
+- The `read_file` tool, when called with a path to a directory instead of a file, now lists the directory's contents instead of throwing an error.  We've observed Claude Haiku 4.5 frequently trying to do this.
+- Hidden files are now shown in the file @-mentioning dropdown.  We also plan to make this configurable.
+- Images displayed in the release notes viewer are now slightly rounded on the corners.
+- The app now automatically checks for updates
+
+Plus **16** bug fixes and optimizations.
+
+## Next up
+
+We're working on web fetch, automatic chat tagging, branching, response rewriting, logging in to provider subscriptions, and worktree/Git integration, and we hope to have some of these major features out this week!
+</Update>
+
 <Update label="v0.1.4" description="December 26th, 2025">
 ## Piebald v0.1.4 - file @-mentioning, rich text editor, agent skills
 
