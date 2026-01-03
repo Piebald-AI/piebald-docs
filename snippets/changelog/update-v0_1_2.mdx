@@ -1,0 +1,15 @@
+<Update label="v0.1.2" description="December 17th, 2025">
+## Piebald v0.1.2 - Token speed meter, repaired Windows support, bug fixes
+
+In this release we've fixed several bugs and introduced a small token speed meter that will show above the message input when a response is streaming. It will show an estimated tokens-per-second speed an estimated total number of tokens generated for the current message:
+
+![A screenshot of the new token speed and count meter.](/imgs/token_counter-v0-1-2.gif)
+
+The following bugs are now fixed:
+
+- **File editing on Windows:** On Windows, when the model tried to edit a file, it would fail if the file used Windows CRLF line endings (`\r\n`). Now we detect the line endings of the file before applying the edit, normalizing the file to the most common line ending in case there are multiple in the same file
+- **Terminal commands on Windows:** Few commands, even properly formatted ones, would successfully execute on Windows because we weren't handling escape characters correctly. Now all valid Batch and PowerShell commands will run. The default shell is currently command prompt (`cmd.exe`); this will be configurable in the future.
+- **Streaming:** A small streaming bug sometimes caused individual characters to be omitted&mdash;e.g., you might see `Hi! 👋 Im` instead of `Hi! 👋 I'm`.
+- **Google tool calls:** Tool calls were being incorrectly translated into Google's native format, causing an error.
+- **Importing credentials from Claude Code on macOS:** On Windows and Linux, Claude Code stores its OAuth credentials in `~/.claude/credentials.json`, but on macOS they're stored in the Keychain&mdash;now we correctly read from the Keychain on macOS when importing existing OAuth crendentials from Claude Code (it will require your password). Thank you to [Chris Watson](https://github.com/watzon) for [reporting](https://github.com/Piebald-AI/piebald/issues/1)!
+</Update>

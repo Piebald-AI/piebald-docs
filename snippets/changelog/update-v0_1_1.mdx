@@ -1,0 +1,13 @@
+<Update label="v0.1.1" description="December 16th, 2025">
+## Piebald v0.1.1 - Context Compaction, Plan Mode, Auto-scroll
+
+- **Context compaction:** If enabled, conversations will now be automatically compacted when 85% of the context is used (configurable). You can also manually compact conversations via the "..." icon in the chat top bar. The system prompt and hyperparameters for compaction can be modified via the "Context Compaction" system profile.
+- **Plan mode:** You can now switch any chat at any time into plan mode via shift+tab, exactly like Claude Code. The builtin tool is called `ProposePlanToUser`, which we think is a more intuitive name than CC's `ExitPlanMode` tool.
+- **Auto-scroll:** Chats now auto-scroll down as messages are added to them.
+- **GPT-5.2:** GPT-5.2 is now in the list of ChatGPT-subscription-compatible models.
+- **Trash all chats:** There's a new button to trash (soft-delete) all the chats in a folder—useful if you have a bunch of test chats or an obsolete project.
+- **Hard-breaks:** Multiple consecutive lines with no backslash or space after them and no empty line between them (aka hard-broken lines) are now displayed as separate lines instead of automatically being displayed as a single line. Since this is somewhat uncommon (e.g. GitHub READMEs don't do this, though GitHub issue/PR comments do), we'll make this configurable soon, when we add markdown customization settings.
+
+**Up next:** Improved Windows support, file @-mentioning, streaming speed visualizer, and better sidebar chat metadata.
+
+</Update>
