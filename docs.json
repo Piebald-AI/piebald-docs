@@ -9,8 +9,8 @@
   },
   "favicon": "/favicon.svg",
   "logo": {
-    "light": "/logo.svg",
-    "dark": "/logo.svg",
+    "light": "/imgs/Piebald_wordmark_light.svg",
+    "dark": "/imgs/Piebald_wordmark_dark.svg",
     "href": "https://piebald.ai"
   },
   "background": {
