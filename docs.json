@@ -8,6 +8,9 @@
     "dark": "#FF8400"
   },
   "favicon": "/favicon.svg",
+  "icons": {
+    "library": "lucide"
+  },
   "logo": {
     "light": "/imgs/Piebald_wordmark_light.svg",
     "dark": "/imgs/Piebald_wordmark_dark.svg",
