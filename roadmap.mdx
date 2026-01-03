@@ -1,34 +1,75 @@
 Here's our immediate public roadmap. We have ideas for many more features besides these that we're planning to explore, but these will help us reach feature parity with existing tools like Claude Code and Gemini CLI.
 
-If there's something not on this list that you want to see added, [let us know](https://github.com/Piebald-AI/piebald/issues/new) and we'll prioritize it!
+<Note>If there's something not on this list that you want to see added, [let us know](https://github.com/Piebald-AI/piebald/issues/new) and we'll prioritize it!</Note>
 
-Core agentic features:
+# In progress
 
-- [ ] Git worktree support
-- [ ] Sub-agents
-- [ ] Hooks
-- [ ] Custom tools
-- [ ] Edit/command sandboxing
+- Direct OAuth login to your ChatGPT, Claude Pro/Max, and Google AI subscriptions
+- Chat relocation
+- Chat duplication
+- Chat pausing
+- Branching/forking mid-chat
+- Enhanced project support and Git worktree support
+- Context editing
+- Response rewriting
+- [+ Add feature here](https://github.com/Piebald-AI/piebald/issues/new)
 
-Advanced features:
+# Planned
 
-- [ ] Importing chats from Claude Code, Gemini CLI, Codex, Cursor, etc.
-- [ ] Archiving chats
-- [ ] Markdown element customizations
-- [ ] Notifications when sessions are waiting
-- [ ] Replay streamed responses
+- Sub-agents
+- Importing chats from Claude Code, Gemini CLI, Codex, Cursor, etc.
+- Hooks
+- [+ Add feature here](https://github.com/Piebald-AI/piebald/issues/new)
 
-Power-user features:
+# Future
 
-- [ ] MCP traffic viewer
-- [ ] Rewriting responses
-- [ ] Multi-version MCP support
+- Custom themes
+- Custom tools
+- Edit/command sandboxing
+- Archiving chats
+- Markdown element customizations
+- Notifications when sessions are waiting
+- Replay streamed responses
+- MCP traffic viewer
+- Multi-version MCP support
+- [+ Add feature here](https://github.com/Piebald-AI/piebald/issues/new)
 
-Done:
-- [x] ~~Web fetching~~ - v0.1.6
-- [x] ~~Web searching~~ - v0.1.5
-- [x] ~~@-mentioning files~~ - v0.1.3
-- [x] ~~Plan mode~~ - v0.1.1
-- [x] ~~Conversation compacting~~ - v0.1.1
-- [x] ~~HTTP traffic viewer~~ - v0.1.0
-- [x] ~~MCP~~ - v0.1.0
+# Done
+
+### v0.1.6
+
+- [**Web fetching**](https://docs.piebald.ai/changelog#web_fetch-builtin-tool)
+- [**Chat continuation (Pro)**](https://docs.piebald.ai/changelog#continuation-pro)
+- [**Automatic & manual chat tagging (Pro)**](https://docs.piebald.ai/changelog#automatic-chat-tagging-pro)
+
+### v0.1.5
+
+- [**Web searching**](https://docs.piebald.ai/changelog#web-search)
+- [**Retention for HTTP traffic logs (Pro)**](https://docs.piebald.ai/changelog#http-traffic-retention-pro)
+- [**"Draft prompt partially written" chat status (Pro)**](https://docs.piebald.ai/changelog#”draft-prompt-partially-written”-pro)
+- [**Log file**](https://docs.piebald.ai/changelog#log-file)
+
+### v0.1.4
+
+- [**@-mentioning files**](https://docs.piebald.ai/changelog#file-@-mentioning)
+- [**Rich-text editor**](https://docs.piebald.ai/changelog#rich-text-editor)
+- [**Agent skills**](https://docs.piebald.ai/changelog#agent-skills)
+
+### v0.1.3
+
+- [**Chat statuses displayed in the sidebar**](https://docs.piebald.ai/changelog#v0-1-3:~:text=Now%20you%E2%80%99ll%20see%20whether%20any%20chats%20are%20working%2C%20have%20finished%20working%2C%20or%20are%20waiting%20for%20tool%20call%20approval%3A)
+- [**MCP server/tools enablement**](https://docs.piebald.ai/changelog#v0-1-3:~:text=And%20you%20can%20enable%20and%20disable%20specific%20MCP%20servers%20and%20individual%20tools.%20Here%E2%80%99s%20an%20example%2C%20where%20we%20have%20only%20propose_plan_to_user%20and%20run_terminal_command%20enabled%2C%20and%20those%20are%20the%20only%20ones%20the%20model%20gets%3A)
+- [**Custom compaction instructions**](https://docs.piebald.ai/changelog#v0-1-3:~:text=We%20also%20added%20the%20ability%20to%20specify%20custom%20instructions%20when%20manually%20compaction%20a%20chat%2C)
+
+### v0.1.2
+
+- [**Token speed counter**](https://docs.piebald.ai/changelog#v0-1-2)
+
+### v0.1.1
+
+- [**Plan mode**](https://docs.piebald.ai/changelog#v0-1-2:~:text=Plan%20mode%3A%20You%20can%20now%20switch%20any%20chat%20at%20any%20time%20into%20plan%20mode%20via%20shift%2Btab%2C%20exactly%20like%20Claude%20Code.%20The%20builtin%20tool%20is%20called%20ProposePlanToUser%2C%20which%20we%20think%20is%20a%20more%20intuitive%20name%20than%20CC%E2%80%99s%20ExitPlanMode%20tool.)
+- [**Conversation compacting**](https://docs.piebald.ai/changelog#v0-1-2:~:text=Context%20compaction%3A,Compaction%E2%80%9D%20system%20profile.)
+
+### v0.1.0
+
+[**Initial release of Piebald.**](https://piebald.ai/blog/piebald-is-here)
