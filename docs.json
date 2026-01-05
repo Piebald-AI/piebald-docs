@@ -30,6 +30,18 @@
           {
             "group": "General",
             "pages": ["roadmap", "changelog"]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              {
+                "group": "Chatting",
+                "expanded": true,
+                "pages": [
+                  "features/chat/chat-continuation"
+                ]
+              }
+            ]
           }
         ]
       }
