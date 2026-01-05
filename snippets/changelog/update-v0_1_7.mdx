@@ -1,0 +1,40 @@
+<Update label="v0.1.7" description="January 4th, 2026">
+## Piebald v0.1.7 - chat relocation & duplication
+
+In v0.1.7 we added two features for chat management: **chat duplication & relocation**.
+
+## Relocating chats (Pro)
+
+Click the dropdown menu on chats in the sidebar and you'll be presented with a **Relocate** option.  It will open up a folder browser and after you select a new location, it will configure that chat to run tool calls in that directory.  It will also rewrite existing messages, tool call inputs/outputs, and context notifications to point to the new directory.
+
+You can also relocate the chat via the config sidebar if you change the path manually:
+
+<img class="shadow-md rounded-xl" width="500" alt="Screenshot of the 'Working Directory' section of a chat's config sidebar, showing a modified path of 'C:\new\directory\' and the existing 'Change' and the new 'Relocate' buttons." src="/imgs/v0-1-7/relocate_working_directory.png" />
+
+Chat relocation requires [Piebald Pro.](https://piebald.ai/pricing)
+
+## Duplicating chats (Pro)
+
+In the same dropdown there's now a **Duplicate** option.  It'll duplicate the chat with all its messages and tool calls in the exact same state, as well as any draft prompt you're still writing, any tags you've assign it, and any custom config you've set on it.
+
+<img class="shadow-md rounded-xl" width="200" alt="Screenshot of the dropdown menu on a chat in the sidebar, with 5 (previously 3) items: Rename, Tag, Relocate, Duplicate, and Trash." src="/imgs/v0-1-7/chat_dropdown_with_duplicate.png" />
+
+Chat duplication requires [Piebald Pro.](https://piebald.ai/pricing)
+
+## Other
+
+A few other things:
+- We added support for Claude Opus 4.5's **effort** parameter, which you can configure in the config sidebar under **Overrides → Anthropic Overrides.**
+- We made HTTP traffic retention enabled by default, and existing users who have it disabled will get a notification on app startup if the app's data file is taking up >50 MB.
+- We also enhanced the styling for thinking blocks:
+
+| before | after |
+| ------- | ----- |
+| <img class="shadow-md rounded-xl" width="350" alt="Screenshot of the old thinking style." src="/imgs/v0-1-7/old_thinking_style.png" /> | <img class="shadow-md rounded-xl" width="400" alt="Screenshot of the new thinking style." src="/imgs/v0-1-7/new_thinking_style.png" /> |
+
+
+# Next
+
+Automatically linking file paths mentioned in the AI's response, chat pausing, chat branching, response rewriting, OAuth login to subscription providers, Git worktree support.
+
+</Update>
