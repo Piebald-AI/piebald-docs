@@ -1,0 +1,33 @@
+<Update label="v0.1.8" description="January 6th, 2026">
+## Piebald v0.1.8 - active chats view & highlighting referenced file paths
+
+In v0.1.8 we added a feature to help you quickly see chats that need your attention, and a feature to highlight files that that AI referenced.
+
+## Highlighting files referenced by the AI ([Pro](https://piebald.ai/pricing))
+
+Whenever the AI outputs a path to a file or folder that exists on disk, it will be highlighted and clickable.  Clicking on it will open it in the default app for the file type, or your file browser if it's a directory:
+
+<img class="shadow-md rounded-xl" width="400" alt="Screenshot of an AI message containing 'The file at main/README.md shows ...' where the file path 'main/README.md' is clickable" src="/imgs/v0-1-8/referenced_path_clickable.png" />
+
+We plan to make enhance this with file type icons and by integrating it into our upcoming integrated file browser and code editor.
+
+Highlighting referenced files requires [Piebald Pro.](https://piebald.ai/pricing)
+
+## "Active chats" view
+
+If you have a lot of chats, it can be hard to navigate to find which ones you need.  We're working on an overhaul of chat organization with more flexibility, but in the meantime we've added an "Active Chats" view at the top of the chat sidebar that shows all the chats that are in progress or need your attention:
+
+<img class="shadow-md rounded-xl" width="450" alt="Screenshot of the orange 'Active Chats' header with a lightning icon and a sub-header '48 chats in progress' in the sidebar, and a chat underneath it awaiting user approval and entitled 'Rust Error Handling Refactoring: Extr...'" src="/imgs/v0-1-8/active_chats.png" />
+
+This feature is enabled by default.  You can disable it via **Settings → General → Show Active Chats Section.**
+
+## Other
+
+We also made the app remember its last window position and size when you reopen it.
+
+We fixed several bugs, including one that made API key providers difficult to create and one that broke importing existing Claude Pro/Max credentials from Claude Code for older versions.
+
+## Next
+
+Chat pausing, chat branching, response rewriting, filter chats by tags, OAuth login to subscription providers, Git worktree support.
+</Update>
