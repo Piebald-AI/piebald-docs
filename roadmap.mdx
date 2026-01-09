@@ -1,12 +1,10 @@
-Here's our immediate public roadmap. We have ideas for many more features besides these that we're planning to explore, but these will help us reach feature parity with existing tools like Claude Code and Gemini CLI.
+Here's our immediate public roadmap. We have ideas for many more features besides these that we're planning to explore in the future, but is what we're actively working on, planning next, and considering for the near future.
 
-<Note>If there's something not on this list that you want to see added, [let us know](https://github.com/Piebald-AI/piebald/issues/new) and we'll prioritize it!</Note>
+<Note>If there's something not on this list that you want to see added, let us know [GitHub](https://github.com/Piebald-AI/piebald/issues/new) or [Discord](https://piebald.ai/discord) and we'll prioritize it!</Note>
 
 # In progress
 
 - Direct OAuth login to your ChatGPT, Claude Pro/Max, and Google AI subscriptions
-- Chat relocation
-- Chat duplication
 - Chat pausing
 - Branching/forking mid-chat
 - Enhanced project support and Git worktree support
@@ -16,9 +14,11 @@ Here's our immediate public roadmap. We have ideas for many more features beside
 
 # Planned
 
+- Web version
 - Sub-agents
 - Importing chats from Claude Code, Gemini CLI, Codex, Cursor, etc.
 - Hooks
+- Storing and syncing conversations and configurations with Piebald Cloud
 - [+ Add feature here](https://github.com/Piebald-AI/piebald/issues/new)
 
 # Future
@@ -36,40 +36,60 @@ Here's our immediate public roadmap. We have ideas for many more features beside
 
 # Done
 
-### v0.1.6
+Also see our full [changelog](/changelog) for the details of each release.
+
+### [v0.1.9](/changelog#v0-1-9)
+
+- [**Customizing the shell used for terminal commands**](https://docs.piebald.ai/changelog#customizing-the-shell-used-for-terminal-commands)
+- [**Pro trial**](https://docs.piebald.ai/changelog#pro-trial)
+- [**Filtering chats by tags (Pro)**](https://docs.piebald.ai/changelog#filtering-chats-by-tags-pro)
+- [**Support for GitHub-flavored alert/callout blocks (Pro)**](https://docs.piebald.ai/changelog#support-for-github-flavored-alert/callout-blocks-pro)
+- [**Clickable file path references show contents on hover (Pro)**](https://docs.piebald.ai/changelog#clickable-file-path-references-show-contents-on-hover-pro)
+
+### [v0.1.8](/changelog#v0-1-8)
+
+- [**Highlighting files referenced by the AI (Pro)**](https://docs.piebald.ai/changelog#highlighting-files-referenced-by-the-ai-pro)
+- [**"Active chats" view**](https://docs.piebald.ai/changelog#”active-chats”-view)
+
+### [v0.1.7](/changelog#v0-1-7)
+
+- [**Chat relocation**](https://docs.piebald.ai/changelog#relocating-chats-pro)
+- [**Chat duplication**](https://docs.piebald.ai/changelog#duplicating-chats-pro)
+
+### [v0.1.6](/changelog#v0-1-6)
 
 - [**Web fetching**](https://docs.piebald.ai/changelog#web_fetch-builtin-tool)
 - [**Chat continuation (Pro)**](https://docs.piebald.ai/changelog#continuation-pro)
 - [**Automatic & manual chat tagging (Pro)**](https://docs.piebald.ai/changelog#automatic-chat-tagging-pro)
 
-### v0.1.5
+### [v0.1.5](/changelog#v0-1-5)
 
 - [**Web searching**](https://docs.piebald.ai/changelog#web-search)
 - [**Retention for HTTP traffic logs (Pro)**](https://docs.piebald.ai/changelog#http-traffic-retention-pro)
 - [**"Draft prompt partially written" chat status (Pro)**](https://docs.piebald.ai/changelog#”draft-prompt-partially-written”-pro)
 - [**Log file**](https://docs.piebald.ai/changelog#log-file)
 
-### v0.1.4
+### [v0.1.4](/changelog#v0-1-4)
 
 - [**@-mentioning files**](https://docs.piebald.ai/changelog#file-@-mentioning)
 - [**Rich-text editor**](https://docs.piebald.ai/changelog#rich-text-editor)
 - [**Agent skills**](https://docs.piebald.ai/changelog#agent-skills)
 
-### v0.1.3
+### [v0.1.3](/changelog#v0-1-3)
 
 - [**Chat statuses displayed in the sidebar**](https://docs.piebald.ai/changelog#v0-1-3:~:text=Now%20you%E2%80%99ll%20see%20whether%20any%20chats%20are%20working%2C%20have%20finished%20working%2C%20or%20are%20waiting%20for%20tool%20call%20approval%3A)
 - [**MCP server/tools enablement**](https://docs.piebald.ai/changelog#v0-1-3:~:text=And%20you%20can%20enable%20and%20disable%20specific%20MCP%20servers%20and%20individual%20tools.%20Here%E2%80%99s%20an%20example%2C%20where%20we%20have%20only%20propose_plan_to_user%20and%20run_terminal_command%20enabled%2C%20and%20those%20are%20the%20only%20ones%20the%20model%20gets%3A)
 - [**Custom compaction instructions**](https://docs.piebald.ai/changelog#v0-1-3:~:text=We%20also%20added%20the%20ability%20to%20specify%20custom%20instructions%20when%20manually%20compaction%20a%20chat%2C)
 
-### v0.1.2
+### [v0.1.2](/changelog#v0-1-2)
 
 - [**Token speed counter**](https://docs.piebald.ai/changelog#v0-1-2)
 
-### v0.1.1
+### [v0.1.1](/changelog#v0-1-1)
 
 - [**Plan mode**](https://docs.piebald.ai/changelog#v0-1-2:~:text=Plan%20mode%3A%20You%20can%20now%20switch%20any%20chat%20at%20any%20time%20into%20plan%20mode%20via%20shift%2Btab%2C%20exactly%20like%20Claude%20Code.%20The%20builtin%20tool%20is%20called%20ProposePlanToUser%2C%20which%20we%20think%20is%20a%20more%20intuitive%20name%20than%20CC%E2%80%99s%20ExitPlanMode%20tool.)
 - [**Conversation compacting**](https://docs.piebald.ai/changelog#v0-1-2:~:text=Context%20compaction%3A,Compaction%E2%80%9D%20system%20profile.)
 
-### v0.1.0
+### [v0.1.0](/changelog#v0-1-0)
 
 [**Initial release of Piebald.**](https://piebald.ai/blog/piebald-is-here)
