@@ -1,0 +1,59 @@
+<Update label="v0.1.9" description="January 8th, 2026">
+## Piebald v0.1.9 - customizing command execution shell, filter chats by tag, Pro trial
+
+In v0.1.9 we've added several new features: customizing the shell used for running commands, filtering chats by tag, GH-flavored callout blocks, and support for **Pro trials.**
+
+## Customizing the shell used for terminal commands
+
+You can now control which shell is used when the model executes terminal commands.  By default, `sh` is used on macOS and Linux and `cmd.exe` is used on Windows, but you can use `bash` and `zsh` on macOS and Linux and Windows PowerShell and Git Bash on Windows.  You can also specify a custom command to run in order to use custom shells e.g. `fish -c {command}`.  Go to **Settings → Built-in Tools → Terminal Shell:**
+
+<img class="shadow-md rounded-xl" width="700" alt="Image" src="/imgs/v0-1-9/custom_shell_settings.png" />
+
+## Pro trial
+
+You can now try Piebald Pro for free for 14 days!  Go to https://piebald.ai/pricing and click **Start a free trial** on the Pro plan.  You'll be redirected to sign in or create an account and then you'll have Piebald Pro access for 2 weeks.  After that you'll need to purchase Pro or be downgraded to Basic.  Starting a Pro trial doesn't require a credit card.
+
+## Filtering chats by tags (Pro)
+
+If you have tags assigned to your chats, you can now temporarily filter chats by a specific set of tags.  Click the **Filter** icon in the top-right corner of the chat sidebar, and select one or more tags to filter by.
+
+<img class="shadow-md rounded-xl" width="250" alt="Image" src="/imgs/v0-1-9/filter_chats_by_tags.png" />
+
+If you don't have any tags created (go to Settings → Chat Tags), the filter icon won't be visible.
+
+Chat tags require [Piebald Pro.](https://piebald.ai/pricing)
+
+## Support for GitHub-flavored alert/callout blocks (Pro)
+
+We now support GitHub-flavored alert/callout/admonition blocks (see [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)) when rendering markdown:
+
+<img class="shadow-md rounded-xl" width="800" alt="Screenshot of a sample of an AI response about JavaScript testing libraries, which includes a blue 'Note' callout block." src="/imgs/v0-1-9/github_flavored_callout.png" />
+
+The syntax is as following, where `NOTE` can be one of `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, or `CAUTION`:
+```
+> [!NOTE]
+> This is a **note.**
+```
+
+Callout/admonition blocks only render in [Piebald Pro.](https://piebald.ai/pricing)
+
+## Clickable file path references show contents on hover (Pro)
+
+When you hover over a file path that's been highlighted, its contents will be loaded and displayed in a popup:
+
+<img class="shadow-md rounded-xl" width="600" alt="Image" src="/imgs/v0-1-9/clickable_file_path_hover.png" />
+
+File paths being automatically detected and made clickable requires [Piebald Pro.](https://piebald.ai/pricing)
+
+## Other
+
+We also added several smaller features&mdash;
+- There's now a button to collapse all open folders in the sidebar (the screenshot of tag filtering above shows it).
+- The "Help" menu now contains many useful links.
+- We improved agentic performance by making both message generation and tool call execution parallel&mdash;previously it was just concurrent.
+- And we fixed a lot of bugs.
+
+## Next up
+
+Chat pausing, chat branching, context editing, response rewriting, filter chats by tags, OAuth login to subscription providers, Git worktree support.
+</Update>
