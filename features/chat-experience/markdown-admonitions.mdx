@@ -1,0 +1,24 @@
+---
+description: Piebald supports markdown admonitions.
+---
+
+import ProBadge from '/snippets/pro-badge.mdx';
+
+<ProBadge />
+
+It's common for markdown renderers to support what are known as **admonitions, callouts,** or **alerts.** They're useful for things like notices or warnings in documentation. The syntax is similar to the blockquote syntax (`>`) but with an additional marker:
+
+```markdown
+> [!NOTE]
+> This is a **note.**
+```
+
+On the [Pro](https://piebald.ai/pricing) plan, Piebald natively supports rendering admonitions using [GitHub-flavored syntax:](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
+
+<img class="shadow-md rounded-xl" width="800" alt="Screenshot of a sample of an AI response about JavaScript testing libraries, which includes a blue 'Note' callout block." src="/imgs/v0-1-9/github_flavored_callout.png" />
+
+## Getting the model to use admonitions
+
+For now, you'll need to **explicitly tell** the AI to use admonitions in order for it to use them&mdash;by default LLMs don't typically output admonitions unless told to.  For example, you could create a profile and add _"Use `> [!TYPE]` admonitions in your responses when appropriate."_
+
+However, in the near future we plan on making a more intuitive UI for enabling the model to use these and other markdown futures.  Imagine a toggle or checkbox labeled "Use admonitions" in a dropdown labeled "Additional markdown features," for example.

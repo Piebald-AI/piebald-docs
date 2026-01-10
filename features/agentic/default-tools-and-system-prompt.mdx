@@ -1,0 +1,33 @@
+---
+title: Default tools & system prompt
+description: Piebald's default system prompt and tool set.
+---
+
+# Default System Prompt
+
+Unlike most agentic development tools, Piebald does not currently have a default system prompt.  For the present, we find that many models work just fine without a system prompt.
+
+When we implement emulation of other agentic development tools, you'll be able to use their system prompts, and we'll consider developing a system prompt of our own; however, a large system prompt will generally just waste token space for capable models like Claude and GPT-5.x that don't directly need one.
+
+<Note>
+    When you use OpenAI models via a ChatGPT Pro/Plus subscription, we do pass a large system prompt.  This is a hard requirement that OpenAI's server imposes as a requirement to use the ChatGPT subscription API.
+
+    This system prompt is the exact same one that Codex uses when you use it with a ChatGPT subscription.
+</Note>
+
+# Built-in Tools
+
+Piebald provides a set of built-in tools that are available to all models.
+
+- `ReadFile`: Reads a file from the file system.  Does not add line prefixes.  Auto-approved for file paths in the current project.
+- `WriteFile`: Writes the given contents to a file on disk.  Overwrite existing files, if any.  Auto-approved in auto-accept edits mode for file paths in teh current project.
+- `EditFile`: Replaces a given old string with a given new string.  Auto-approved in auto-accept edits mode for file paths in teh current project.
+- `Glob`: Search for file paths via glob patterns, e.g. `**/*.ts`.
+- `Grep`: Search for text in a folder recursively using regular expressions.  Accepts a variety of [ripgrep](http://github.com/BurntSushi/ripgrep)-like options.
+- `WebFetch`: Returns the text content of page at the given URL.
+- `WebSearch`: Searches the web for the given query using [Exa.](http://exa.ai/)
+- `RunTerminalCommand`: Runs the given terminal command.  Uses `sh` on macOS and Linux and `cmd /C` on Windows, but you can [configure the shell used for executing terminal commands.]()
+- `TodoWrite`: Updates the current todo list for the chat.
+- `ProposePlanToUser`: Prompts you to exit plan mode by displaying the given plan text as markdown.
+
+

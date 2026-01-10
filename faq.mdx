@@ -1,0 +1,17 @@
+---
+title: FAQ
+---
+
+## Why does it say that it's Claude Code?
+
+> I'm using Claude Max and when I say "Hi" to Piebald, it says "I'm Claude Code" &mdash; why?
+
+Anthropic requires that all requests to their Claude Pro-/Max-specific API begin with a special string that says
+
+```
+You are Claude Code, Anthropic's official CLI for Claude.
+```
+
+Any request that does not have this line is rejected.  If you're using Piebald with your Claude Pro/Max subscription, we have to pass this string along, and so the model will think that it's Claude Code.
+
+However, this does not affect the model's functionality.  It will perform great inside Piebald without knowing that it's not actually working inside Claude Code.

@@ -1,0 +1,34 @@
+---
+title: "Configuring terminal command execution shell"
+description: "Piebald lets you control which shell is used for executing terminal commands."
+---
+
+import FreeBadge from '/snippets/free-badge.mdx';
+
+<FreeBadge />
+
+When a model wants to execute a terminal command, it uses the built-in `RunTerminalCommand` tool (see [Default tools & system prompt](/features/default-tools-and-system-prompt)).  Internally, the `RunTerminalCommand` tool executes the given command using `sh -c` on UNIX systems (macOS and Linux) and `cmd.exe /C` on Windows.  However, you can change the default shell to a preset or a custom command.
+
+Go to **Settings &rarr; Built-in Tools** and select a preset for **Terminal Shell.**  The default presets are:
+
+**UNIX:**
+- Bourne Shell (`/bin/sh`)
+- Bash (`/bin/bash`)
+- Zsh (`/bin/zsh`)
+
+**Windows**
+- Command Prompt (cmd.exe)
+- Windows PowerShell
+- Git Bash (MinGW)
+
+Git for Windows must be installed in order to use Git Bash in Piebald.  Download it from [gitforwindows.org](https://gitforwindows.org/).
+
+## Using a custom shell
+
+You can also specify a custom shell, which is useful when you want to use a shell not explicitly mentioned above.  For example, if you have custom aliases in a shell like Fish.
+
+To use a custom shell, set **Terminal Shell** to **Custom...** and then enter each individual argument required to invoke the shell with a command.  Most UNIX shells accept a `-c` argument, e.g. `fish -c "..."`.  Use `{command}` as the last argument.
+
+<Warning>**Do not wrap the `{command}` argument in quotes** unless you're using a custom shell that requires it.  When you use a custom shell, Piebald passes each argument to the shell directly without needing to quote arguments.</Warning>
+
+We plan to automatically detect installed shells so you won't have to go the custom route for the majority of cases.

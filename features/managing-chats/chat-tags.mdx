@@ -1,0 +1,42 @@
+---
+title: "Automatic & manual chat tagging"
+description: "Organize chats in Piebald with automatic or manual tagging."
+---
+
+import ProBadge from '/snippets/pro-badge.mdx';
+
+<ProBadge />
+
+If you have a lot of chats, it can be helpful to assign tags to them.  You can filter chats by their assigned tags, and they can tell you at a glance what areas a particular chat are about.
+
+Tags are created in **Settings &rarr; Chat Tags.**  Chat tags require [Piebald Pro.](https://piebald.ai/pricing)
+
+## Automatically creating tags
+
+Tags can be automatically assigned to a new chat by an AI when it generates a title for it.  The system prompt for the **Title & Tag Generation** built-in profile must include instructions to generate tags.  By default it does; if it doesn't, click "Reset to Default" to reset it to a default system prompt that includes the instructions.
+
+Here's a screenshot of the title/tag generations model suggesting a new tag:
+
+<img
+  class="shadow-md rounded-xl"
+  width="900"
+  alt="Screenshot of an new AI-proposed 'language-comparison' tag"
+  src="/imgs/v0-1-6/new_tag_proposed.png"
+/>
+
+Automatic existing tag assignment and new tag suggestion are enabled by default; go to **Settings &rarr; Title & Tag Generation** and turn off **Enable automatic chat tagging** or **Allow LLM to suggest creating new tags** to disable them.
+
+
+## Filtering chats by tag
+
+If you have tags created and assigned to chats, you can filter chats by tags.  Click the <Icon icon="funnel"/> icon in the top-right corner of the chat sidebar and select the tag or tags to filter by:
+
+<img class="shadow-md rounded-xl" width="300" alt="Image" src="/imgs/v0-1-9/filter_chats_by_tags.png" />
+
+## Manually tagging a chat
+
+If you'd like to manually assign a tag to a chat, click on the <Icon icon="ellipsis" /> icon on a chat in the sidebar and choose **<Icon icon="tag"/> Tag**.  There must be some tags created in the settings beforehand.
+
+<img class="shadow-md rounded-xl" width="300" alt="Image" src="/imgs/tagging_a_chat.png" />
+
+Then select one or more tags from the dialog and click **Save Tags.**

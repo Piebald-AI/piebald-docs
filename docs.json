@@ -20,27 +20,80 @@
     "decoration": "gradient"
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude"]
+    "options": [
+      "copy",
+      "view",
+      {
+        "title": "Ask on Discord",
+        "description": "Ask the Piebald devs and community",
+        "icon": "discord",
+        "href": "https://piebald.ai/discord"
+      },
+      {
+        "title": "Share on X",
+        "description": "Share this doc on X",
+        "icon": "x-twitter",
+        "href": {
+          "base": "https://x.com/intent/tweet",
+          "query": [
+            {
+              "key": "text",
+              "value": "Check out this page from Piebald's docs: $page"
+            }
+          ]
+        }
+      },
+      "chatgpt",
+      "claude",
+      "perplexity"
+    ]
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Docs",
-        "groups": [
+        "group": "General",
+        "pages": [
+          "introduction",
+          "roadmap",
+          "changelog",
+          "faq"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "log-file"
+        ]
+      },
+      {
+        "group": "Features",
+        "pages": [
           {
-            "group": "General",
-            "pages": ["roadmap", "changelog"]
+            "group": "Chat experience",
+            "expanded": true,
+            "pages": [
+              "features/chat-experience/markdown-admonitions",
+              "features/chat-experience/clickable-file-references"
+            ]
           },
           {
-            "group": "Features",
+            "group": "Managing chats",
+            "expanded": true,
             "pages": [
-              {
-                "group": "Chatting",
-                "expanded": true,
-                "pages": [
-                  "features/chat/chat-continuation"
-                ]
-              }
+              "features/managing-chats/chat-tags",
+              "features/managing-chats/relocating-and-duplicating"
+            ]
+          },
+          {
+            "group": "Agentic",
+            "expanded": true,
+            "pages": [
+              "features/agentic/default-tools-and-system-prompt",
+              "features/agentic/tool-enablement",
+              "features/agentic/chat-status-in-the-sidebar",
+              "features/agentic/chat-continuation",
+              "features/agentic/configuring-command-exec-shell",
+              "features/agentic/copying-plan-to-clipboard"
             ]
           }
         ]
