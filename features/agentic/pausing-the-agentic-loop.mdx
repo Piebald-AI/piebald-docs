@@ -1,0 +1,31 @@
+import ProBadge from '/snippets/pro-badge.mdx';
+
+<ProBadge />
+
+With Piebald, you can **pause the agentic flow** in a chat.  This is a unique feature that may seem unintuitive at first.
+
+Traditionally, the only way you can stop an agent is by interrupting it.  If it's generating text, there will be a partial response which will have to be regenerated, wasting time, tokens, and context space.  If it's executing a tool call, the subprocess will be killed and the system may be left in an inconsistent state (files partially modified, temporary files not cleaned up, handles corrupted, etc.).
+
+Piebald takes advantage of the **agentic loop** to enable graceful pausing of the chat **without** interrupting.
+
+## The agentic loop
+
+The "agentic loop" is the underlying mechanism that enables AI agents to work autonomously.  A conversation is a list of messages starting with the first user message; that context is sent to an AI provider and a response is generated and appended to the conversation.
+
+If the response contains tool calls, they get executed&mdash;possibly waiting while the interface allows the user to approve or deny them&mdash;and their output is appended to the conversation context, and a second response is generated.
+
+This cycle of _context update &rarr; regenerate_ fully encapsulates the entire agentic loop and is what makes modern agentic development possible.
+
+## Pausing the loop
+
+In order to provide graceful pausing, Piebald hooks into the agentic loop; we simply break the loop and skip auto-approval if the chat is paused.  This allows you to temporarily and cleanly stop the agent&mdash;for example, if the model has done its research and planning but your working directory isn't ready yet&mdash;without wasting time or tokens.
+
+Pausing has another benefit as well.  When the loop is paused, no tool calls are automatically approved, so you can intercept tools that would normally be auto-approved and edit or deny them instead.  Here's an example of a read-only tool (`ls -la`) which would normally be auto-approved, but, since the chat is paused, is left waiting for manual handling:
+
+<img class="shadow-md rounded-xl" width="600" alt="Screenshot of `ls -la` not being auto-approved because the chat has been paused." src="/imgs/v0-1-10/chat_paused.png" />
+
+## Resuming the loop after pausing
+
+Resuming the loop simply picks it up where it left off; auto-approving any elligible pending tool calls, starting a new generation, and repeating.  The result will be exactly the same as if you had let the agent continue without pausing.
+
+Pausing the agentic loop requires [Piebald Pro](https://piebald.ai/pricing).

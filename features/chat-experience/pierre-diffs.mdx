@@ -1,0 +1,19 @@
+---
+title: "Using @pierre/diffs for file edit diffs"
+description: "Piebald allows you to switch between @pierre/diffs and Monaco editor."
+---
+
+import ProBadge from '/snippets/pro-badge.mdx';
+
+<ProBadge />
+
+By default, Piebald uses [Monaco editor](https://github.com/microsoft/monaco-editor), the same editor that powers VS Code, to render diffs when the model creates or edits files.  Here's an example:
+
+<img class="shadow-md rounded-xl" width="700" alt="Screenshot of a diff rendered with Monaco editor" src="/imgs/v0-1-10/diff_monaco.png" />
+
+With Piebald Pro, you can switch the library used for diff rendering to [`@pierre/diffs`](https://diffs.com/):
+
+<img class="shadow-md rounded-xl" width="700"  alt="Screenshot of a diff rendered with Diffs" src="/imgs/v0-1-10/diff_diffs.png" />
+
+In order to use Diffs, go to **Settings &rarr; Chat Interface** and under **Diff Library**, select **@pierre/diffs**.
+

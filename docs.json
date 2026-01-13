@@ -73,7 +73,8 @@
             "expanded": true,
             "pages": [
               "features/chat-experience/markdown-admonitions",
-              "features/chat-experience/clickable-file-references"
+              "features/chat-experience/clickable-file-references",
+              "features/chat-experience/pierre-diffs"
             ]
           },
           {
@@ -88,6 +89,8 @@
             "group": "Agentic",
             "expanded": true,
             "pages": [
+              "features/agentic/pausing-the-agentic-loop",
+              "features/agentic/agents-md",
               "features/agentic/default-tools-and-system-prompt",
               "features/agentic/tool-enablement",
               "features/agentic/chat-status-in-the-sidebar",

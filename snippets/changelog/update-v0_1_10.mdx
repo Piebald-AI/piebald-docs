@@ -1,0 +1,47 @@
+<Update label="v0.1.10" description="January 12th, 2026">
+## Piebald v0.1.10 - pausing the agentic loop, AGENTS.md, AI asking questions
+
+In v0.1.10 we've added chat pausing, icons next to clickable file references, an `AskUserQuestion` tools, support for `AGENTS.md`, and the option to use Diffs instead of Monaco editor.
+
+## Pausing the agentic loop (Pro)
+
+You can now **pause** the agentic loop inside chats.  Agentic AI tools work by generating a response for the given context, handling any tool calls in the response, appending the response to the conversation, generating another response, and repeating.  Piebald now allows you to gracefully pause and resume that loop without interrupting a generation.
+
+Here's a screenshot, where a read-only command that would normally be automatically approved is pending manual approval because the chat is paused.  You can either manually approve it and then click the Continue button to generate one response, or click Unpause to resume the agentic loop, automatically approving the tool call as usual and generating subsequent responses.
+
+<img class="shadow-md rounded-xl" width="600" alt="Screenshot of `ls -la` not being auto-approved because the chat has been paused." src="/imgs/v0-1-10/chat_paused.png" />
+
+Pausing and resuming the agentic loop requires [Piebald Pro](https://piebald.ai/pricing).
+
+## Icons next to clickable file references (Pro)
+
+If you have Piebald Pro, files mentioned by the AI will automatically be made clickable, and will open in the default app for the file type.  Now a colored file type icon will show next to them:
+
+<img class="shadow-md rounded-xl" width="600" alt="Screenshot of several file paths made clickable with colored icons for the different filetypes (.json, .md, .tsx, .ts)" src="/imgs/v0-1-10/clickable_file_ref_icons.png" />
+
+Clickable file references requires [Piebald Pro](https://piebald.ai/pricing).
+
+## Using Diffs instead of Monaco editor (Pro)
+
+You can now use [@pierre/diffs](https://diffs.com/) as an alternative to [Monaco editor](https://github.com/microsoft/monaco-editor) for viewing diffs when the AI creates or modifies files.
+
+|   | Screenshot |
+|-|-|
+| **Diffs** | <img class="shadow-md rounded-xl" width="700"  alt="Screenshot of a diff rendered with Diffs" src="/imgs/v0-1-10/diff_diffs.png" /> |
+| **Monaco** | <img class="shadow-md rounded-xl" width="700" alt="Screenshot of a diff rendered with Monaco editor" src="/imgs/v0-1-10/diff_monaco.png" /> |
+
+Customizing the diff viewer requires [Piebald Pro](https://piebald.ai/pricing).
+
+## AGENTS.md
+
+Piebald now automatically reads `AGENTS.md` in the current directory:
+
+<img class="shadow-md rounded-xl" width="400" alt="Screenshot of a message with AGENTS.md attached" src="/imgs/v0-1-10/agents_md.png" />
+
+## `AskUserQuestion` built-in tool
+
+The model can now ask you questions with a dedicated UI using the new built-in `AskUserQuestion` tool.  Currently it only supports asking one question at a time, but we'll remove this restriction in a later version.
+
+<img class="shadow-md rounded-xl" width="600" alt="Screenshot of a question 'What type of authentication are you planning to implement' asked by the AI, with several answers available to choose from" src="/imgs/v0-1-10/ask_user_question.png" />
+
+</Update>

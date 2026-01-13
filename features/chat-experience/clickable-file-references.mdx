@@ -2,14 +2,17 @@
 description: "Easily view files referenced in AI's responses."
 ---
 
-import ProBadge from '/snippets/pro-badge.mdx';
+import ProBadge from "/snippets/pro-badge.mdx";
 
 <ProBadge />
 
-If you have [Piebald Pro](https://piebald.ai/pricing), then file or folder paths that the model references in its responses will be highlighted and made clickable:
-
-Clicking on them will open the file or folder in the default app/file browser.  We plan to integrate a file browser and code editor into the app, and clicking the file paths will open the file in the integrated editor.
+If you have [Piebald Pro](https://piebald.ai/pricing), then file or folder paths that the model references in its responses will be highlighted with a colored file-type-specific icon and made clickable.  Clicking on them will open the file or folder in the default app/file browser.  We're developing an integrated file browser and code editor into the app, so that clicking the file paths will open the file in the editor.
 
 Hovering over a reference will load the file and show it with syntax highlighting, similar to file-@mentions:
 
-<img class="shadow-md rounded-xl" width="600" alt="Image" src="/imgs/v0-1-9/clickable_file_path_hover.png" />
+<img
+  class="shadow-md rounded-xl"
+  width="600"
+  alt="Image"
+  src="/imgs/clickable_hover_with_icons.png"
+/>
