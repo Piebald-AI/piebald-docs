@@ -1,0 +1,87 @@
+---
+description: Piebald supports desktop notification when chats need your attention.
+---
+
+import ProBadge from '/snippets/pro-badge.mdx';
+import FreeBadge from '/snippets/free-badge.mdx';
+
+<FreeBadge />
+
+When the model is finished with a task or calls a tool that needs your attention, Piebald can display notifications on your desktop and play sounds with them.
+
+Desktop notifications are enabled by default.  If you'd like to disable them, go to the **Settings &rarr; Notifications** and uncheck **Enable Desktop Notifications**.
+
+## When notifications are sent
+
+Piebald will send notifications for the events:
+- The model finishes its task or response (technically, its generation completes without tool calls)
+- The model calls one or more tools that require manual approval
+- The generation fails due to a connection or server error (Pro)
+
+It will only notify you for chats that you're not actively viewing, or if you're not in the app at all.  It won't notify you for the current chat.
+
+## Customizing notification string format (Pro)
+
+<ProBadge />
+
+If you have [Piebald Pro](https://piebald.ai/pricing), You can customize the title and body that are used for notifications.  The default title and body for each notification type are as follows:
+
+_Completion_
+
+> **✓ \{\{chat_title\}\}** \
+> Complete after \{\{duration\}\}
+
+_Tool Approval_
+
+> **⏸ \{\{chat_title\}\}** \
+> \{\{tool_name\}\} awaiting approval
+
+_Error_
+
+> **✗ \{\{chat_title\}\}** \
+> Error: \{\{error_message\}\}
+
+The following variables are available to use in titles and bodies:
+- `{{chat_title}}` - Chat title
+- `{{duration}}` - Generation time (completion only)
+- `{{tool_name}}` - Tool name (tool approval only)
+- `{{tool_count}}` - Number of tools (tool approval only)
+- `{{error_message}}` - Error details (error only)
+
+## Sounds
+
+Piebald can play a sound when it sends notifications, with a configurable volume level independent from the system volume level.  If you'd like to disable sounds for notifications, toggle **Notification Sounds** in **Settings &rarr; Notifications**.
+
+<img class="shadow-md rounded-xl" alt="Screenshot of the notification settings" src="/imgs/notification_sound_settings.png" />
+
+Piebald Pro allows you to select from among the following sounds for task completion, pending tool call, and generation error notifications:
+
+- Beep Up
+- Shooting Star
+- Keypress
+- Buzz
+- Bell
+- Modulation
+- Motor Buzz
+- Starting Line
+- Sweep
+- Connected
+- Clink
+- Tick
+- Confirmation
+- Beep Down
+- Beep Up 2
+- Dual Tone
+- Congrats
+- Alarm Dark
+- Alarm Light
+- Loud Alarm
+- Digital
+- Error
+- Pop
+- Resume
+- Menu Back
+- Water Drop
+- Electric
+- Glitch
+- Shimmer

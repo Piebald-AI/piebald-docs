@@ -1,0 +1,32 @@
+<Update label="v0.1.11" description="January 19th, 2026">
+## Piebald v0.1.11 - desktop notifications & Amazon Bedrock
+
+In this release, per user requests, we've added desktop notifications with sounds and support for Amazon Bedrock.
+
+## Desktop notifications
+
+Whenever the model finishes generation or calls a tool that blocks while it's waiting for your approval, you can now get notified immediately via desktop notifications on macOS, Windows, and Linux.  A sound can also be played with the notification, and clicking on the notification will bring you right into the specific chat.  Additionally, if you're on the Pro plan, you can choose from 30+ extra sounds.
+
+<img class="shadow-md rounded-xl" width="700" alt="Screenshot of the different notifications displayed for macOS (Sequoia), Windows (11, 24H2), and Linux (GNOME)" src="/imgs/v0-1-11/macos_windows_linux_desktop_notifs.png" />
+
+## Amazon Bedrock
+
+You can now use all text-based models available via Amazon Bedrock (Claude, Nova, OSS models, etc.) in Piebald.  You can source credentials from the environment (env vars, profile, shared creds, EC2 role, SSO), or manually input an access key ID and a secret access key.
+
+<img class="shadow-md rounded-xl" width="500" alt="Screenshot showing the Create Amazon Bedrock Provider dialog" src="/imgs/v0-1-11/create_amazon_bedrock_provider_dialog.png" />
+
+Different models require different configuration, so check out [the docs for our Amazon Bedrock integation](https://docs.piebald.ai/providers/amazon-bedrock) for more information.
+
+## Other
+
+We've also
+- Updated Google AI and Claude Pro/Max model list
+- Moved the in-app toast notifications from the bottom-right to the top-right corner
+- Fixed clickable file reference flickering during streaming
+
+## Next up
+
+Chat branching, OAuth login with subscription providers like Claude Pro/Max, context editing, live streaming of terminal command output, sub agents, response rewriting, Git worktree support, web mode.
+
+
+</Update>

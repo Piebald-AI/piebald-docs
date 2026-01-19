@@ -1,0 +1,94 @@
+---
+title: "Amazon Bedrock"
+description: "Use models from Amazon Bedrock in Piebald."
+---
+
+import FreeBadge from '/snippets/free-badge.mdx';
+
+<FreeBadge />
+
+Piebald supports using models hosted on [Amazon Bedrock](https://aws.amazon.com/bedrock/), such as Claude, Amazon Nova, etc.  If you have AWS credentials, you can create an Amazon Bedrock provider in Piebald.
+
+There are two ways to create an Amazon Bedrock provider in Piebald: by specifying an AWS access key ID and a secret access key manually, and by automatically detecting credentials through the environment.
+
+When detecting AWS credentials from the environment, Piebald goes through 4 steps.  If credentials are found, the search is stopped, so these steps are sorted in descending order of priority:
+
+1. `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
+2. [Shared credentials](https://docs.aws.amazon.com/sdkref/latest/guide/file-location.html) (`~/.aws/credentials`)
+3. IAM role if running on EC2/ECS/Lambda
+4. AWS SSO
+
+## Creating an Amazon Bedrock provider
+
+To create an Amazon Bedrock provider, go to **Settings &rarr; Providers &rarr; New Provider &rarr; Amazon Bedrock**.  If you have a specific access key ID + secret access key pair, choose **Access Key**; otherwise choose **Default Credentials** to have Piebald detect credentials from the environment.
+
+<img class="shadow-md rounded-xl" alt="" src="/imgs/bedrock_provider_creation.png" />
+
+Once the provider is created you'll be able to use it in chats.
+
+## IAM permissions
+
+Piebald uses the newer [Amazon Bedrock Converse API](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html) (instead of the older Invoke API) to communicate with models on Bedrock, so you'll need to allow the [`bedrock:Converse`](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html) and [`bedrock:ConverseStream`](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html) APIs for the IAM entity you use.  For example:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:Converse",
+        "bedrock:ConverseStream"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+## Bedrock API keys
+
+We don't support [Bedrock API keys](https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys-how.html) yet.  However, if you need to use Bedrock API keys, [open an issue](https://github.com/Piebald-AI/piebald/issues/new) and let us know!
+
+## Common errors
+
+You may encounter various errors when using different Bedrock models with different configurations in Piebald.  We're working to stabilize our support for Amazon Bedrock and make errors more intuitive, but in the meantime, below is a list of several errors with explanations.
+
+Errors coming from AWS will have the following format:
+
+> Bedrock converse_stream request failed: &lt;SomeType&gt;Exception - &lt;error message&gt;
+
+#### "Invocation of model ID _&lt;model ID&gt;_ with on-demand throughput isn’t supported. Retry your request with the ID or ARN of an inference profile that contains this model."
+
+You can't use the foundation model directly; you need to use an [inference profile](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) instead.  Look for the same model name but prefixed with a region like "GLOBAL" (`global.`) or "US" (`us.`).
+
+#### "The model returned the following errors: Malformed input request: `#/toolConfig/tools/10`: extraneous key `[cachePoint]` is not permitted, please reformat your input and try again."
+
+The model doesn't support caching tool definition.  (It might still support caching _messages_ though.)  Turn off caching tool definitions in the chat settings &rarr; **Overrides &rarr; Amazon Bedrock overrides &rarr; Cache Tool Definitions**.
+
+#### "The model is unsupported for streaming."
+
+You've specified a model that doesn't support text output, like an embeddings or image generation model.  Piebald does not support using a non-text mode.
+
+#### "You invoked an unsupported model or your request did not allow prompt caching. See the documentation for more information."
+
+As the error message says&mdash;either you used a model that your account doesn't have access to, or the model you're using doesn't support prompt caching, which is enabled in the current chat.
+
+To disable prompt caching, go to the **Settings &rarr; Overrides &rarr; bedock &rarr; enable prompt caching.
+
+If prompt caching is disabled and you're still getting the error, then it's because you don't have access to the model on Bedrock.  If you're a first-time user of Claude models on Bedrock, you need to submit use case details in order to get access; see [Claude Code docs](https://code.claude.com/docs/en/amazon-bedrock).
+
+#### "This model doesn't support tool use in streaming mode."
+
+This error means that the model you're using doesn't support tools at all.  Disable tool use in the chat/profile settings **&rarr; Configuration &rarr; Enable tools**.
+
+#### "The model returned the following errors: Malformed input request: `#`: extraneous key `[thinking]` is not permitted, please reformat your input and try again."
+
+You've configured Claude reasoning for the chat/profile but you're using a non-Claude model.  Disable Claude reasoning or use a Claude model
+
+#### "The model returned the following errors: Malformed input request: `#`: extraneous key `[reasoningConfig]` is not permitted, please reformat your input and try again."
+
+Same as above; you've configured Nova reasoning for the chat/profile but you're using a non-Nova model.  Disable Nova reasoning or use a Nova model
+
+#### "Model access is denied due to IAM user or service role is not authorized to perform the required AWS Marketplace actions (`aws-marketplace:ViewSubscriptions`, `aws-marketplace:Subscribe`) to enable access to this model. Refer to the Amazon Bedrock documentation for further details. Your AWS Marketplace subscription for this model cannot be completed at this time. If you recently fixed this issue, try again after 5 minutes."
+
+Some models on Bedrock are served via the marketplace, and if you're using one, Bedrock will try to enable it from the marketplace automatically.  However, if your AWS credentials don't allow the necessary AWS actions (`aws-marketplace:ViewSubscriptions` and `aws-marketplace:Subscribe` in this case), it will be unable to do that.  See [this Amazon Bedrock docs page](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html).

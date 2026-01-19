@@ -72,6 +72,7 @@
             "group": "Chat experience",
             "expanded": true,
             "pages": [
+              "features/chat-experience/desktop-notifications",
               "features/chat-experience/markdown-admonitions",
               "features/chat-experience/clickable-file-references",
               "features/chat-experience/pierre-diffs"
@@ -99,6 +100,13 @@
               "features/agentic/copying-plan-to-clipboard"
             ]
           }
+        ]
+      },
+      {
+        "group": "Providers",
+        "expanded": true,
+        "pages": [
+          "providers/amazon-bedrock"
         ]
       }
     ]
