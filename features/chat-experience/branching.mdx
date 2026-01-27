@@ -1,0 +1,32 @@
+---
+title: "Branching (forking)"
+description: "Piebald supports branching/forking chats for context efficiency."
+---
+
+import ProBadge from "/snippets/pro-badge.mdx";
+
+<ProBadge />
+
+Piebald doesn't constrain you to have a single, linear chat history. You can branch at any point in the chat, after and user or AI message.
+
+There are two ways of branching: **replying** to a previous message, and **editing and regenerating** a previous message. Both will generate a fresh response in a new branch.
+
+Branching allows you to be significantly more efficient with your context window. When you want to, for example, ask a followup question of an older response, or perform more tasks related to the current conversation, you don't have to include subsequent irrelevant context.
+
+This lets you work with the conversation's valuable past context for much longer before you have to compact or start a new chat, and avoids sending unnecessary tokens to providers.
+
+<img
+  class="shadow-md rounded-xl"
+  width="800"
+  alt="Screenshot of an AI message that branched with two different user replies, and a subsequent AI message with 3 different replies and a new draft one"
+  src="/imgs/v0-1-13/branching.png"
+/>
+
+If you have branches but you've downgraded to Piebald Basic, then the branch point banner will still show but it will be locked:
+
+<img
+  class="shadow-md rounded-xl"
+  width="500"
+  alt="A branch point indicator with 6 branches that are locked because of a lock of a Piebald Pro subscription"
+  src="/imgs/branching_locked_basic.png"
+/>

@@ -72,6 +72,7 @@
             "group": "Chat experience",
             "expanded": true,
             "pages": [
+              "features/chat-experience/branching",
               "features/chat-experience/desktop-notifications",
               "features/chat-experience/markdown-admonitions",
               "features/chat-experience/clickable-file-references",
