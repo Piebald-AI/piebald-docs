@@ -1,0 +1,39 @@
+<Update label="v0.1.14" description="February 2nd, 2026">
+## Piebald v0.1.14 - Antigravity subscription, native file picker
+
+In this release, we've added a **native** file picker matching Piebald's look and feel, and **experimental support for Google Antigravity subscriptions**.
+
+## Google Antigravity subscriptions (Experimental)
+
+You can now use Google Antigravity subscriptions for agentic development.  Go to **Settings &rarr; Providers &rarr; New Provider**, login with your Antigravity subscription, and then select a model.
+
+> **Note:** Using Google Antigravity subscriptions outside of Antigravity may violate Google's terms of service, and **your Google/Antigravity account may be banned** (especially when used with newly created Google accounts or accounts newly subscribed to Google AI Pro or Ultra).
+>
+> By using this integration, you acknowledge that you assume all associated risks.
+>
+> As a result of this, we've performed limited testing of our Antigravity integration, and while we've been careful to ensure parity with other direct Antigravity login solutions, we may have some things wrong.  If you run into a bug, please don't hesitate to immediately [report it](https://github.com/Piebald-AI/piebald/issues/new)!
+
+<img class="shadow-md rounded-xl" width="400" alt="Screenshot of the Antigravity subscription provider waiting for authentication" src="/imgs/v0-1-14/antigravity_login_waiting.png" />
+
+## Custom Open Folder dialog
+
+We've introduced a new Open Folder dialog that matches the overall look and feel of Piebald:
+
+<img class="shadow-md rounded-xl" width="1536" alt="New custom open folder dialog" src="/imgs/v0-1-14/custom_open_folder_dialog.png" />
+
+You can also return to the native OS dialog if you prefer via the link in the bottom-left corner and the settings.
+
+## Other
+
+We've also fixed a few bugs:
+
+* The dropdown that appears when you mention a file using `@` now grows to maximum width and is horizontally scrollable.
+* Fixed a bug in the markdown renderer where HTML tags outputted in codeblocks were incorrectly parsed into UI elements.
+* Fixed a small theming glitch with the @pierre/diffs diffs rendering.
+
+And a few small features:
+
+* The dialog detailing a new release now automatically appears when Piebald sees a new release of the app.
+* Providers can now be created with empty API keys.  Useful when testing providers and for local/custom model servers.
+
+</Update>

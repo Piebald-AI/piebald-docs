@@ -1,0 +1,30 @@
+---
+title: "Google Antigravity"
+description: "Use your Google Antigravity subscription in Piebald."
+---
+
+import FreeBadge from '/snippets/free-badge.mdx';
+
+<FreeBadge />
+
+Piebald supports using models through your [Google Antigravity](https://antigravity.google/) subscription.
+
+<Warning>
+**Important note**
+
+Using your Antigravity subscription in third-party applications (including Piebald) may violate Google's Antigravity terms of service.  Some users have reported that their accounts were **banned** (silently and/or permanently), especially when using newly created Google accounts.
+
+By using the Antigravity provider in Piebald, you assume all risks associated with using a third-party tool to authenticate to Antigravity.
+</Warning>
+
+## Logging in with Antigravity
+
+To login to your Antigravity subscription, create a new Antigravity provider through **Settings &rarr; Providers &rarr; New Provider &rarr; Google &rarr; Sign in to Antigravity**:
+
+<img class="shadow-md rounded-xl" alt="Screenshot directing the user to the Sign in to Antigravity provider creation option" src="/imgs/sign_in_to_antigravity.png" />
+
+Clicking **Sign in to Antigravity** will open a new tab for you to authenticate with your Google account.  The Google sign in page will automatically redirect or provide an authentication code.  If it doesn't redirect, copy the authorization code and paste it back into the **Sign in to Antigravity** dialog in Piebald:
+
+<img class="shadow-md rounded-xl" width="450" alt="Screenshot directing users to paste authorization code into Piebald dialog" src="/imgs/paste_antigravity_auth_code.png" />
+
+Once you've finished the Antigravity authentication process, you should be able to use your new Antigravity provider to chat with the same models that are provided in the Antigravity IDE.
