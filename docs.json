@@ -109,6 +109,13 @@
         "pages": [
           "providers/amazon-bedrock"
         ]
+      },
+      {
+        "group": "Configuration",
+        "expanded": true,
+        "pages": [
+          "configuration/native-folder-picker"
+        ]
       }
     ]
   }
