@@ -107,7 +107,8 @@
         "group": "Providers",
         "expanded": true,
         "pages": [
-          "providers/amazon-bedrock"
+          "providers/amazon-bedrock",
+          "providers/google-antigravity"
         ]
       },
       {
