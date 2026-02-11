@@ -1,0 +1,28 @@
+<Update label="v0.1.17" description="February 10th, 2026">
+## Piebald v0.1.17 - Interactive terminal commands & streamed tool calls
+
+Piebald v0.1.17 is out with interactive terminal commands and streamed tool calls.
+
+## Live, interactive terminal commands
+
+We now show a real terminal when the model calls a terminal command using the builtin `RunTerminalCommand` tool, instead of capturing the output and displaying it at the end.  This will show command output live as it's produced, with colors and all other ANSI escape codes used to produce attractive output.  Additionally, this lets this model start interactive commands, which will wait for you to enter your input directly in the terminal.
+
+<video src="/imgs/live_terminal_commands.mp4" name="live_terminal_commands.mp4">Video showing live terminal commands</video>
+
+## Streamed tool calls
+
+Piebald now streams tool calls in real time instead of buffering them until they're finished streaming.  This means that you'll see tool calls the instance the model starts generating them, and you'll see the entire input streamed as well.  The result is that the agentic loop over all feels noticeably faster.
+
+<video src="/imgs/streamed_tool_calls.mp4" name="streamed_tool_calls.mp4">Video showing streamed tool calls</video>
+
+## Assistant message quoting
+
+We've also added assistant message quoting&mdash;select some text and a small "Quote" menu will appear.  Clicking it will copy the selected text into the message input as a markdown blockquote:
+
+<img class="shadow-md rounded-xl" width="400" alt="Screenshots of assistant message quoting functionality" src="/imgs/v0-1-17/assistant_message_quoting.png" />
+
+## Other
+
+* `AskUserQuestion` tool calls are now properly not automatically approved in YOLO mode&mdash;their entire purpose is to solicit user input and YOLO mode was preventing them from being able to get that input by automatically approving them with empty answers.
+* We also fixed some bugs in auto-scrolling.
+</Update>
