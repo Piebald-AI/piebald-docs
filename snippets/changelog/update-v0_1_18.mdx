@@ -1,0 +1,72 @@
+<Update label="v0.1.18" description="February 14th, 2026">
+## Piebald v0.1.18 - enhanced sidebar, app-wide font customization, GitHub Copilot, OpenAI Responses configuration
+
+In this version we've added subagents, enhanced the chat sidebar, added app-wide font customization, introduced support for GitHub Copilot, added OpenAI Responses provider configuration, and added a quick feedback dialog to instantly create feature requests and bug reports with debugging data attached.
+
+# Subagents
+
+Piebald now supports **subagents**.  Subagents allow the model to perform exploration/research/planning tasks and lots of mechanical edits in an isolated context without cluttering the main chat's context.
+
+By default, a live preview of the subagent chat is shown in the primary conversation window, but you can open it in its own full view if you'd like to see its prompt, progress, and output.  And since Piebald stores subagents chats just like any other chat, you can even send subsequent messages in it after it's finished!
+
+<video class="shadow-md rounded-xl" src="/imgs/v0-1-18/sub_agents.mp4" autoplay controls>Video of sub-agent in action.</video>
+
+# Sidebar enhancements: hiding old chats, compact mode, smooth animations
+
+We now automatically hide chats older than 3 days.  You can customize that threshold in the settings&mdash;go to **Settings &rarr; General &rarr; Recent Chat Threshold**.
+
+We also added a new **compact mode** for chats in the sidebar.  It will hide tags and date information, leaving only message count, status, and title, making the sidebar much more dense.  You can enable/disable compact mode via an icon at the top of the sidebar and in **Settings &rarr; General &rarr; Compact Sidebar**.
+
+We also added smooth animations to the sidebar for a more polished feel. 
+
+<video class="shadow-md rounded-xl" src="/imgs/v0-1-18/sidebar_compact_mode.mp4" width="450" autoplay controls>Video of navigating a project named 'tweakcc' with two chats in it and 83 older chats hidden, compact mode</video>
+
+# App-wide font customization
+
+You can now change the **font size** and **font family** of the entire app's UI for customization and accessibility.
+
+For the font size, you can choose between 5px and 25px, which allows you to use Piebald conveniently on very small screens by zooming out, and on very large screens by zooming in.
+
+For the font family, you can select any font installed on the system, or browse through 2000+ Google Fonts and instantly use any without having to install them first.
+
+<video class="shadow-md rounded-xl" src="/imgs/v0-1-18/font_customization.mp4" autoplay controls>Video of font customization - navigate to Settings &rarr; Appearance &rarr; Font Size or Font Family.</video>
+
+# GitHub Copilot support
+
+We now support using your GitHub Copilot subscription in Piebald.  Go to **Settings &rarr; Providers &rarr; New Provider &rarr; GitHub Copilot &rarr; Sign-in**, copy the code, sign in to GitHub if you're not signed in already, and then enter the code.
+
+<img class="shadow-md rounded-xl" width="720" alt="Screenshot of GitHub Copilot provider creation method" src="/imgs/v0-1-18/github_copilot_provider.png" />
+
+# OpenAI Responses configuration
+
+You can now configure reasoning effort, parallel tool calls, and more for chats that use OpenAI Responses API providers.  You can also use GPT-5(.x)-specific parameters like text verbosity:
+
+<img class="shadow-md rounded-xl" width="592" alt="Image" src="/imgs/v0-1-18/openai_responses_config.png" alt="Screenshot of the 'OpenAI Responses Overrides' in a chat's config" />
+
+# Report feedback
+
+You can now report quick feedback right inside the app!  No need to report issues [on GitHub](https://github.com/Piebald-AI/piebald/issues/new) or [in Discord](https://piebald.ai/discord) anymore, although you're still welcome to.
+
+You can report 3 types of feedback: **feature** (new feature requests), **bugs** (report bugs), and **enhancements** (misc improvements that aren't full features).  To report feedback, click the smiley icon in the small sidebar, above your profile picture.  A floating panel will come up that lets you write a description of the bug/request.
+
+You can also choose to automatically attach an auto-generated **screenshot** of the app and all the contents of the current chat to your request.  This is **highly recommended** for bug reports because it will make it very simple for us to investigate and solve issues you encounter during a chat.
+
+<video class="shadow-md rounded-xl" src="/imgs/v0-1-18/submit_feedback.mp4" autoplay controls>Video touring users on Submit Feedback dialog.</video>
+
+# Other
+
+We've fixed several bugs as well:
+
+- Fixed a streaming flickering bug
+- Enhanced Google tool call support
+- Added native menu items on macOS
+- Fixed stuck "streaming..." indicator for OpenAI providers
+- Truncated very long active TODO item names
+- Fixed @-mention and newline behavior
+- Fixed a bug with unsetting override config
+- Expanded tool calls when they're not auto-approved
+
+# Next up
+
+We're working on Git worktree support, context editing, an integrated file browser, code editor, and terminal, web mode, and storage and syncing of data with Piebald Cloud.  After that we'll be adding support for model reactions, many new providers, accurate token usage metrics, an LLM usage stats page, and local models.
+</Update>
