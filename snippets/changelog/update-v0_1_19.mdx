@@ -1,0 +1,49 @@
+<Update label="v0.1.19" description="February 19th, 2026">
+## Piebald v0.1.19 - message reactions, OAuth provider details, copy selection as markdown, GitHub Copilot
+
+In v0.1.19 we've added support for GitHub Copilot, message reactions, details for OAuth providers, and copying a selection of text markdown!
+
+## Message reactions
+
+You can now use emojis to react to the model's messages, and it can react to yours!  The model will not use reactions in a chat unless you explicitly use one yourself&mdash;this will be configurable in the future.  The model can only react to your most recent message, and when the it does, the emoji will be displayed on the message:
+
+<video class="shadow-md rounded-xl" src="/imgs/v0-1-19/reactions.mp4" controls autoplay>Video of user reacting to model's message, and model reacting in turn to user's message</video>
+
+## Details for OAuth providers
+
+When you use OAuth subscription providers in Piebald like Claude Max, you can now see account details as returned by the provider during authentication:
+
+<img class="shadow-md rounded-xl" width="800" alt="Screenshot showing several OAuth providers with various information under them" src="/imgs/v0-1-19/oauth_provider_details.png" />
+
+## Copying text selections as markdown
+
+When you select and copy a portion of the model's reply, any markdown included in your selection will be preserved and copied to your clipboard.  It's fully preserved when you quote a selection as well:
+
+<img class="shadow-md rounded-xl" width="300" alt="Screenshot of user selecting markdown elements to quote" src="/imgs/v0-1-19/quoting_markdown_elements.png" />
+
+## Onboarding tours
+
+To help new users get starting in the app, we've added some onboarding tours.  If you've already used the functionality that the tours demo, you won't see them, but you can reset them in Settings &rarr; General &rarr; Reset Guided Tours.
+
+<video class="shadow-md rounded-xl" src="/imgs/v0-1-19/onboarding_tours.mp4" controls autoplay>Video of user navigating through onboarding tour that directs user to provider setup.</video>
+
+## GitHub Copilot support
+
+We now support using your GitHub Copilot subscription in Piebald.  Go to **Settings &rarr; Providers &rarr; New Provider &rarr; GitHub Copilot &rarr; Sign-in**, copy the code, sign in to GitHub if you're not signed in already, and then enter the code.
+
+<img class="shadow-md rounded-xl" width="720" alt="Screenshot of GitHub Copilot provider creation method" src="/imgs/v0-1-19/github_copilot_provider.png" />
+
+## Other
+
+We also&mdash;
+
+* Added "continue" link when the model's response ends with a colon but no tool call, e.g. "Let me read the file:" in case it seemed to "forget" to call a tool (Pro)
+* Added line count information to the end of tool call output (like ReadFile) when it's truncated, making the reading of large files much simpler for the model
+* Added descriptions to chat tags to help models select existing tags more accurately
+* Made subagents allowed in Plan mode
+* Fixed bugs around compaction and title generation for ChatGPT providers, tool call auto-approval UI, macOS titlebar, Anthropic thinking blocks, custom override fields, and multibyte characters.
+
+## Up next
+
+We're working on Git worktree support, image/vision support, context editing, an integrated file browser, code editor, and terminal, web mode, and storage and syncing of data with Piebald Cloud. After that we'll be adding support for many new providers, accurate token usage metrics, an LLM usage stats page, and local models.
+</Update>
