@@ -1,0 +1,16 @@
+---
+title: Live, interactive terminal commands
+description: Piebald shows terminal command output as it's outputted.
+---
+
+import FreeBadge from '/snippets/free-badge.mdx';
+
+<FreeBadge />
+
+When the model runs a terminal command, Piebald executes the command in an integrated terminal instance embedded in the app.  This means that interactive commands and commands that output colors and other ANSI escape codes are supported.
+
+When the command is interactive (i.e. requires user interaction/input like `npm init`, `sudo` commands, etc.), you can enter input and navigate options directly inside the tool call UI.  This opens interesting possibilities, including running full REPLs like `node`, or even TUIs like `claude`!
+
+<video src="/imgs/live_terminal_commands.mp4" name="live_terminal_commands.mp4" controls>Video showing live terminal commands</video>
+
+Terminal sessions are not currently preserved across multiple terminal commands.  For example, if the model sets a shell variable in one command, the next command will not be able to `echo` it.  This is a limitation that we plan on removing in the future.
