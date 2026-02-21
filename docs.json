@@ -77,7 +77,11 @@
               "features/chat-experience/desktop-notifications",
               "features/chat-experience/markdown-admonitions",
               "features/chat-experience/clickable-file-references",
-              "features/chat-experience/pierre-diffs"
+              "features/chat-experience/pierre-diffs",
+              "features/chat-experience/streamed-tool-calls",
+              "features/chat-experience/live-interactive-terminal-commands",
+              "features/chat-experience/assistant-message-quoting",
+              "features/chat-experience/reactions"
             ]
           },
           {

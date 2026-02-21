@@ -1,0 +1,18 @@
+---
+description: Piebald allows you and model to react to each other's messages.
+---
+
+import FreeBadge from '/snippets/free-badge.mdx';
+
+<FreeBadge />
+
+Piebald allows you to use emojis to react to any of the model's messages.  Reacting on a message will add a small notification to the context that the model will see the next time you send a message.  (Reacting alone will not trigger generation.)
+
+Piebald also allow the model to react to your messages. To avoid the model being too proactive with reactions, we only allow it to use reactions once you have reacted at least once, so if you don't want the model reacting to your messages, it won't as long as you don't react to its msesages.
+
+You can use the same 8 emojis to react to messages as GitHub uses for issue/PR comment reaction&mdash;👍, 👎, ❤️, 🎉, 😄, 😕, 👀, and 🚀&mdash;and we plan to make this list customizable.  The model can currently use any valid emoji to react to your messages, and we plan to restrict it to a customizable set.
+
+Here's a demo of the user reacting to the model's message and the model reacting in turn:
+
+<video class="shadow-md rounded-xl" src="/imgs/v0-1-19/reactions.mp4" controls autoplay>Video of user reacting to model's message, and model reacting in turn to user's message</video>
+
