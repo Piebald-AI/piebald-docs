@@ -1,0 +1,21 @@
+{/*
+  Mux Video Player Component
+  
+  Usage:
+    import { MuxVideo } from '/snippets/mux-video.mdx';
+    <MuxVideo playbackId="YOUR_PLAYBACK_ID" title="Video title" />
+  
+  Props:
+    - playbackId (required): The Mux playback ID from your video JSON file
+    - title (optional): Accessible title for screen readers, defaults to "Video demo"
+*/}
+
+export const MuxVideo = ({ playbackId, title = "Video demo" }) => (
+  <iframe
+    className="w-full aspect-video rounded-xl"
+    src={`https://player.mux.com/${playbackId}?accent-color=%23ff8400`}
+    title={title}
+    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+);
