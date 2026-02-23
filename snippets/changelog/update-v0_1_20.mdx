@@ -1,0 +1,41 @@
+<Update label="v0.1.20" description="February 22nd, 2026">
+## Piebald v0.1.20 - Image support, subagent model customization, monospace font customization
+
+In this release we've added image support, raw markdown mode, monospace font customization, subagent model customization, and OAuth provider token editing!
+
+## Image support
+
+Piebald now has first class support for vision models that can take images as input, like Claude, GPT-5, and Gemini.  Image input is also supported when using Amazon Bedrock.  You can upload an image from disk via file picker, drag & drop an image from your desktop, or paste a screenshot from your clipboard.  The images will be queued and attached to your next message.
+
+<video class="shadow-md rounded-xl" src="/imgs/v0-1-20/image_support.mp4" controls autoplay>Video demonstrating image support in Piebald</video>
+
+## Setting to customize the monospace font
+
+In addition to the main app font, you can now customize the monospaced font used for inline code and code blocks, in **Settings &rarr; Appearance &rarr; Monospace Font Family**.
+
+<img class="shadow-md rounded-xl" width="1790" alt="Screenshot demonstrating tool call with custom monospace font" src="/imgs/v0-1-20/monospace_font_customization.png" />
+
+## Customizing the model and profile before approving subagents
+
+When the model launches a subagent, you now have the option to change the model it uses before it starts:
+
+<img class="shadow-md rounded-xl" width="986" alt="Screenshot demonstrating the ability for users to choose provider and model before launching subagent" src="/imgs/v0-1-20/subagent_provider_model.png" />
+
+## Raw markdown mode
+
+Pro users can now turn on raw markdown mode, where messages' markdown content is displayed as plain text with syntax highlighting instead of being rendered as HTML:
+
+<img class="shadow-md rounded-xl" width="1000" alt="Screenshot demonstrating raw markdown mode" src="/imgs/v0-1-20/raw_markdown_mode.png" />
+
+## Edit OAuth providers' tokens
+
+You can now view, and even edit, the OAuth access and refresh tokens for OAuth providers like Claude Max:
+
+<img class="shadow-md rounded-xl" width="1839" alt="Screenshot demonstrating OAuth access and refresh token editing" src="/imgs/v0-1-20/provider_oauth_tokens.png" />
+
+## Other
+
+We also fixed bugs in our Copilot support, our Antigravity support, reactions, clickable file mentions, tooltips, custom models, thinking in OpenAI completions providers, tours, regeneration, and markdown rendering,
+
+
+</Update>
