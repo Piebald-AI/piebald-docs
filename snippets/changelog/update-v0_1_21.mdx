@@ -1,0 +1,92 @@
+<Update label="v0.1.20" description="February 22nd, 2026">
+## Web mode
+
+You can now use Piebald in your browser instead of your desktop.  If you're familiar with Jupyter notebooks, the process is similar—run `piebald-web`/`piebald-web.exe` in the terminal and then go to http://localhost:7000.  If you'd like to use a different port, set `PIEBALD_WEB_PORT` to any valid port number that's not already in use and re-run `piebald-web`.
+
+This is especially useful on Linux where Tauri apps may not perform well in some desktop environments.
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://player.mux.com/R01200yLYe6IgW01ciPVS1plt02rY00TjixEsQ9Q011202HnQE?accent-color=%23ff8400"
+  title="Web mode"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+## Customize accent color
+
+You can now change Piebald's accent color from the default orange to any color you'd like!  There's both a light and dark mode accent color.
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://player.mux.com/Tks7IiRNyUM6nX4kc9wf4Ujjy6FRXL3sGpqjgpcwqio?accent-color=%23ff8400"
+  title="Accent color customization"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+## Tool call re-execution (Pro)
+
+You can now re-execute individual tool calls made by the model.  This can be useful if the results are stale, for example you had the AI start something but forgot to switch to a new branch: you can pause the loop, switch to the new branch, and re-execute the `git status` or whatever the model did.
+
+This means that you don't have to tell the AI to re-run the commands, which wastes context, or regenerate the entire response from the start, which may result in a different series of tools being called due to LLMs' non-deterministic nature.
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://player.mux.com/NM7lbVYKpSuBUif6oz02vS3jWxzLmBXQMh3hYOig36rA?accent-color=%23ff8400"
+  title="Tool call re-execution (Pro)"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+Tool call re-execution requires [Piebald Pro](https://piebald.ai/pricing).
+
+## Slash commands
+
+Piebald now features built-in slash commands!  Type `/` in the input box to see a list of them.  You can perform common actions like pausing, compacting, and reporting feedback right from the input box without having to click around to the right menu item.
+
+Displaying loaded skills as slash commands is not yet supported but will be soon.
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://player.mux.com/ekvEvwjRNr1e77AjexO6Jru023loJkw001fvdIbfb02hNI?accent-color=%23ff8400"
+  title="Slash commands"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+## Ctrl+R prompt search (Pro)
+
+You can now use Ctrl+R when the message input box is focused to trigger **reverse incremental prompt search**.  Hit Ctrl+R, type part of a past prompt you've sent, and it will automatically replace the current context of the input, which you can then revise or send it directly after hitting Esc.  (If you delete your query without pressing Esc it will restore whatever original input, if any, you had.)
+
+This feature is ubiquitous in terminal shells like bash, zsh, and PowerShell&mdash;bash shows `(reverse-i-search)` and PowerShell shows `bck-i-search`, for example.
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://player.mux.com/XOESjD0201KgHtYTxGCYTLRm9d1ipck006z02dLBKwIWC004?accent-color=%23ff8400"
+  title="Ctrl+R prompt search (Pro)"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+Ctrl+R to show reverse incremental search is only available in [Piebald Pro](https://piebald.ai/pricing).
+
+## Warning for active sessions before closing the app (Pro)
+
+When you close the app, if any chats are still active, a dialog will be opened listing all the active chats and giving you an option to pause, interrupt, or wait for them before closing the app.
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://player.mux.com/8CNcASIiCtPc02VKKTxGXtPA008zS8ZWZ01xxCaHDhDLtg?accent-color=%23ff8400"
+  title="Warning for active sessions before closing the app (Pro)"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+## Other
+
+- We've added a new setting to automatically collapse thinking blocks during streaming if you don't want to see the model's reasoning while it's working: **Settings &rarr; Chat Interface &rarr; Collapse Thinking by Default**.
+- Whenever an unexpected error notification occurs, there will now be a "Report..." button to open a pre-filled feedback dialog so that you can report the error.
+-  There's a new button in the chat topbar when you're in a subagent chat that lets you go back to the parent chat, automatically scrolling to the precise location in the parent chat where the subagent was launched.
+- We also fixed a bug users were experiencing when using 9router, as well as bugs with Copilot, Gemini Code Assist prompt caching/rate limiting, OpenAI token refreshing, subagent finish race conditions, chats not in a directory, pausing, pasting text, image viewing, tool call expansion, emoji fonts, codeblock themes, long code spans and tool calls being clipped, and tooltips.
+</Update>
