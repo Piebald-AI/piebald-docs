@@ -1,6 +1,6 @@
 ---
-title: Default tools & system prompt
-description: Piebald's default system prompt and tool set.
+title: "Default tools & system prompt"
+description: "Piebald's default system prompt and tool set."
 ---
 
 # Default System Prompt
@@ -8,12 +8,6 @@ description: Piebald's default system prompt and tool set.
 Unlike most agentic development tools, Piebald does not currently have a default system prompt.  For the present, we find that many models work just fine without a system prompt.
 
 When we implement emulation of other agentic development tools, you'll be able to use their system prompts, and we'll consider developing a system prompt of our own; however, a large system prompt will generally just waste token space for capable models like Claude and GPT-5.x that don't directly need one.
-
-<Note>
-    When you use OpenAI models via a ChatGPT Pro/Plus subscription, we do pass a large system prompt.  This is a hard requirement that OpenAI's server imposes as a requirement to use the ChatGPT subscription API.
-
-    This system prompt is the exact same one that Codex uses when you use it with a ChatGPT subscription.
-</Note>
 
 # Built-in Tools
 
@@ -29,5 +23,3 @@ Piebald provides a set of built-in tools that are available to all models.
 - `RunTerminalCommand`: Runs the given terminal command.  Uses `sh` on macOS and Linux and `cmd /C` on Windows, but you can [configure the shell used for executing terminal commands.]()
 - `TodoWrite`: Updates the current todo list for the chat.
 - `ProposePlanToUser`: Prompts you to exit plan mode by displaying the given plan text as markdown.
-
-
