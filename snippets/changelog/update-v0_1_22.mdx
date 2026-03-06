@@ -1,0 +1,56 @@
+import { MuxVideo } from '/snippets/mux-video.mdx'
+
+<Update label="v0.1.22" description="March 6th, 2026">
+In this release, we've added VS Code theme importing for code blocks, branch renaming, and numerous UI improvements and bug fixes.
+
+## VS Code theme importing for code blocks (Pro)
+
+If you're on Piebald Pro, you can now import any theme from VS Code to use for code block syntax highlighting.
+
+1. In VS Code, open the command palette via <kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
+2. Choose **Developer: Generate Color Theme From Current Settings**.  
+3. Copy the resulting JSON
+4. In Piebald, go to **Settings &rarr; Appearance** and scroll down to **Code Block Themes**
+5. Click **Import VS Code Theme**
+6. Paste the JSON, name the theme, choose whether it's light or dark, and click **Import**
+7. Select your theme from the **Light Mode** or **Dark Mode** select boxes
+
+<MuxVideo playbackId="Riya9AG5j5vLJ2zGsKtMoP01sgGl7ERegAGjWRu2H99k" title="VS Code theme importing for code blocks (Pro)" />
+
+## Branch renaming (Pro)
+
+You can now rename branches to more descriptive names than the default "Branch 1", "Branch 2", etc.  Hover over the branch name and click "Rename"
+
+<MuxVideo playbackId="KuI027D4uNAoFSRmCf46bnHMLI8SB700oMKJdp4iBbjWM" title="Branch renaming (Pro)" />
+
+## Text selection uses accent color
+
+The background color for text selection is now overridden by your customizable accent color:
+
+<img class="shadow-md rounded-xl" width="1790" alt="Screenshot of the text being highlighted in the accent color" src="/imgs/v0-1-22/text_highlight_accent.png" />
+
+## Hit 'Esc' to interrupt generation
+
+In addition to clicking the red stop button in the input box, you can now hit the <kbd>Esc</kbd> key while a message is being generated to interrupt it: 
+
+<MuxVideo playbackId="PWrmtMpqTFsK3IUNj00FpPk6uhzCdGtYbACSQYBxB1JM" title="Hit 'Esc' to interrupt generation" />
+
+## Other
+
+We've also polished the UI and fixed many bugs:
+- "Generating..." will now be shown while titles are generating, for clarity.
+- There's a new "Refresh now" link in OAuth providers in the settings if you need to refresh the OAuth tokens now.
+- The `/compact` slash command can now take custom instructions, bypassing the confirmation dialog.
+- OAuth errors like expired/invalid tokens will have a "Re-authenticate" button inline for easy refreshing.
+- We updated the icons for providers and provider creation methods.
+- There's a new "Question" type of feedback report.
+- The chat count is now shown for folders in compact mode.
+- Subagent runs and terminal commands now have run duration appended to the output, configurable via a setting.
+- Thinking blocks can be configured to be automatically collapsed when they're done generating.
+- The `RunTerminalCommand` builtin tool's description is dynamically updated to include the type of shell you've configured.
+- "Overloaded" and "Internal server error" errors are now elaborated with more explanation.
+- Chats in the sidebar are grayed out when empty to indicate that leaving them will auto-delete them.
+
+And we fixed bugs with MiniMax in OpenRouter, missing stop reason for Anthropic, terminal auto-scrolling, `Search` tool output & format, context notifications, subagent status, OAuth refreshing, toast notifications, long chat names, and `localStorage` usage.
+
+</Update>
